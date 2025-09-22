@@ -1,6 +1,11 @@
 #include "obfuscator.h"
 
 #include <iostream>
+#include <bit>
+
+#pragma comment (lib, "Zydis.lib")
+#pragma comment (lib, "Zycore.lib")
+#pragma comment (lib, "asmjit.lib")
 
 ZydisFormatter formatter;
 ZydisDecoder decoder;

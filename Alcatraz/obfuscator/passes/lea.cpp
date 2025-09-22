@@ -27,7 +27,7 @@ bool obfuscator::obfuscsate_lea(std::vector<obfuscator::function_t>::iterator& f
 
 			void* fn;
 			auto err = rt.add(&fn, &code);
-			auto jitinstructions = this->instructions_from_jit((uint8_t*)fn, code.codeSize());
+			auto jitinstructions = this->instructions_from_jit((uint8_t*)fn, code.code_size());
 
 
 			for (auto jit : jitinstructions) {

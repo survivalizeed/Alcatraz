@@ -112,10 +112,12 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>F:\Programming\Projects\C++\1Includes\zydis\include;F:\Programming\Projects\C++\1Includes\zycore-c\include;F:\Programming\Projects\C++\1Includes\asmjit\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>F:\Programming\Projects\C++\1Includes\zydis\Release;F:\Programming\Projects\C++\1Includes\zycore-c\Release;F:\Programming\Projects\C++\1Includes\asmjit\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -129,12 +131,14 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>F:\Programming\Projects\C++\1Includes\zydis\include;F:\Programming\Projects\C++\1Includes\zycore-c\include;F:\Programming\Projects\C++\1Includes\asmjit\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>F:\Programming\Projects\C++\1Includes\zydis\Release;F:\Programming\Projects\C++\1Includes\zycore-c\Release;F:\Programming\Projects\C++\1Includes\asmjit\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

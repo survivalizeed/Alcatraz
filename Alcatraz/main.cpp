@@ -25,11 +25,11 @@ int main(int args, char* argv[]) {
 		auto functions = pdb.parse_functions();
 		std::cout << "Successfully parsed " << functions.size() << " function(s)" << std::endl;
 
-		auto new_section = pe.create_section(".0Dev", 10000000, IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ | IMAGE_SCN_CNT_CODE);
+		auto new_section = pe.create_section(".reloc3", 10000000, IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ | IMAGE_SCN_CNT_CODE);
 
 		obfuscator obf(&pe);
 		obf.create_functions(functions);
-		obf.run(new_section, true);
+		obf.run(new_section, false);
 	
 		auto extension = std::filesystem::path(binary_path).extension();
 		pe.save_to_disk(std::filesystem::path(binary_path).replace_extension().string() + ".obf" + extension.string(), new_section, obf.get_added_size());

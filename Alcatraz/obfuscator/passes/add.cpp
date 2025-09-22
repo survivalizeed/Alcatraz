@@ -28,7 +28,7 @@ bool obfuscator::obfuscate_add(std::vector<obfuscator::function_t>::iterator& fu
 		void* fn = nullptr;
 		auto err = rt.add(&fn, &code);
 
-		auto jitinstructions = this->instructions_from_jit((uint8_t*)fn, code.codeSize());
+		auto jitinstructions = this->instructions_from_jit((uint8_t*)fn, code.code_size());
 		int orig_id = instruction->inst_id;
 		instruction = function->instructions.erase(instruction);
 		instruction -= 1;

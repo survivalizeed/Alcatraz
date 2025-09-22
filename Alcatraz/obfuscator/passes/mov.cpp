@@ -15,16 +15,16 @@ bool obfuscator::obfuscate_mov(std::vector<obfuscator::function_t>::iterator& fu
 			auto usingregister = x86_register_map->second;
 
 			//If the datatype doesnt match the register we skip it due to our rotations. You could translate to that register but meh
-			if (bit_of_value == 8 && !usingregister.isGpb())
+			if (bit_of_value == 8 && !usingregister.is_gp8())
 				return false;
 
-			if (bit_of_value == 16 && !usingregister.isGpw())
+			if (bit_of_value == 16 && !usingregister.is_gp16())
 				return false;
 
-			if (bit_of_value == 32 && !usingregister.isGpd())
+			if (bit_of_value == 32 && !usingregister.is_gp32())
 				return false;
 
-			if (bit_of_value == 64 && !usingregister.isGpq())
+			if (bit_of_value == 64 && !usingregister.is_gp64())
 				return false;
 
 
@@ -76,7 +76,7 @@ bool obfuscator::obfuscate_mov(std::vector<obfuscator::function_t>::iterator& fu
 			void* fn = nullptr;
 			auto err = rt.add(&fn, &code);
 
-			auto jitinstructions = this->instructions_from_jit((uint8_t*)fn, code.codeSize());
+			auto jitinstructions = this->instructions_from_jit((uint8_t*)fn, code.code_size());
 			instruction = function->instructions.insert(instruction + 1, jitinstructions.begin(), jitinstructions.end());
 			instruction = instruction + jitinstructions.size() - 1;
 
